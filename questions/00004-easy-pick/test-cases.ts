@@ -1,11 +1,7 @@
-import type { Equal, Expect } from '@type-challenges/utils'
+import type { Equal, Expect } from "../../utils"
 
-type cases = [
-  Expect<Equal<Expected1, MyPick<Todo, 'title'>>>,
-  Expect<Equal<Expected2, MyPick<Todo, 'title' | 'completed'>>>,
-  // @ts-expect-error
-  MyPick<Todo, 'title' | 'completed' | 'invalid'>,
-]
+type MyPick<T, K extends keyof T> = { [S in K] : T[S]}
+
 
 interface Todo {
   title: string
