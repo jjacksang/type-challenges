@@ -1,1 +1,3 @@
-type HelloWorld = any // expected to be a string
+import { Equal, Expect } from "../../utils"
+
+type HelloWorld = string
